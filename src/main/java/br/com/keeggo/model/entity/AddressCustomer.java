@@ -3,11 +3,10 @@ package br.com.keeggo.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
-@Getter@Setter
+@Data
 public class AddressCustomer {
 	
 	@Column(nullable = false, length = 150)
