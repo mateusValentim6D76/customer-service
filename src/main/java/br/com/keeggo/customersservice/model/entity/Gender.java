@@ -1,14 +1,12 @@
-package br.com.keeggo.model.entity;
+package br.com.keeggo.customersservice.model.entity;
 
 import javax.persistence.Entity;
 
 import lombok.Getter;
 
-@Entity
-@Getter
+
 public enum Gender {
-	
-	MALE,
-	FEMALE
+
+	MALE, FEMALE
 
 }

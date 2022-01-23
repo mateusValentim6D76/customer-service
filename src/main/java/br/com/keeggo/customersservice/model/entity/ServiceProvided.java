@@ -1,4 +1,4 @@
-package br.com.keeggo.model.entity;
+package br.com.keeggo.customersservice.model.entity;
 
 import java.math.BigDecimal;
 
@@ -14,19 +14,19 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Service {
+public class ServiceProvided {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(nullable = false)
 	private String description;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "id_cliente")
 	private Customer customer;
-	
+
 	@Column
 	private BigDecimal value;
 }
