@@ -47,10 +47,12 @@ public class Customer {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	
-	@Column(name = "registration_date")
+	@Column(name = "registration_date", updatable = false)
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate registrationDate;
 
+	
+	
 	
 	@PrePersist
 	public void	prePersist() {
