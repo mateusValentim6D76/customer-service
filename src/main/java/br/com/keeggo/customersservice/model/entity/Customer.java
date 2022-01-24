@@ -11,6 +11,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.br.CPF;
+
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -31,12 +36,17 @@ public class Customer {
 	private Integer id;
 
 	@Column(nullable = false, length = 150)
+	@NotEmpty
 	private String name;
 
 	@Column(nullable = false, length = 150)
+	@NotEmpty
 	private String surname;
 
+	
 	@Column(nullable = false, length = 11, name = "num_cpf")
+	@NotNull
+	@CPF
 	private String cpf;
 
 	@Column(name = "dth_birthday")
