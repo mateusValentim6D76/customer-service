@@ -16,7 +16,7 @@ public class InternacionalizacaoConfig {
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
 		//nome do arquivo que se encontra dentro de src/main/resources
-		messageSource.setBasename("messages");
+		messageSource.setBasename("classpath:messages");
 		//reconhece os caracteres especiais utilizado no nosso idioma
 		messageSource.setDefaultEncoding("ISO-8859-1");
 		messageSource.setDefaultLocale(Locale.getDefault());

@@ -1,5 +1,7 @@
 package br.com.keeggo.customersservice.rest;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,7 +31,7 @@ public class CustomerController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Customer save(@RequestBody Customer customer) {
+	public Customer save(@RequestBody @Valid Customer customer) {
 		return repository.save(customer);
 	}
 	
