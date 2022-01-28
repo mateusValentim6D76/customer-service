@@ -63,7 +63,7 @@ public class Customer {
 	@NotEmpty(message = "{surname.field.required}")
 	private String surname;
 
-	@Column(nullable = false, length = 11, name = "num_cpf")
+	@Column	(nullable = false, length = 11, name = "num_cpf", unique = true)
 	@NotNull(message = "{cpf.field.required}")
 	@CPF(groups = CPFValidator.class, message = "{cpf.field.invalid}")
 	@CNPJ(groups = CNPJValidator.class)
