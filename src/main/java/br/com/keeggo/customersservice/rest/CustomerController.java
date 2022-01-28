@@ -1,5 +1,7 @@
 package br.com.keeggo.customersservice.rest;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,11 @@ public class CustomerController {
 	@Autowired
 	public CustomerController(CustomerRepository repository) {
 		this.repository = repository; 
+	}
+	
+	@GetMapping
+	public List<Customer> getAll() {
+		return repository.findAll();
 	}
 	
 	@PostMapping
