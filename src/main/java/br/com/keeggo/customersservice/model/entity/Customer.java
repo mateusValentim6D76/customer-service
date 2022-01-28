@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -25,6 +26,7 @@ import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import ch.qos.logback.core.subst.Token.Type;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -63,7 +65,6 @@ public class Customer {
 
 	@Column(nullable = false, length = 11, name = "num_cpf")
 	@NotNull(message = "{cpf.field.required}")
-	@NonNull
 	@CPF(groups = CPFValidator.class, message = "{cpf.field.invalid}")
 	@CNPJ(groups = CNPJValidator.class)
 	private String cpf;
@@ -80,7 +81,7 @@ public class Customer {
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate registrationDate;
 
-	@OneToMany
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	private List<AddressCustomer> addressCustomer;
 
 	@PrePersist

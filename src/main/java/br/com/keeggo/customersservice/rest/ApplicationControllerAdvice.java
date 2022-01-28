@@ -18,7 +18,7 @@ import br.com.keeggo.customersservice.rest.exception.ApiErrors;
 public class ApplicationControllerAdvice {
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	@ResponseStatus(HttpStatus.OK)
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ApiErrors handleValidationErrors(MethodArgumentNotValidException ex) {
 		BindingResult bindingResult = ex.getBindingResult();
 		List<String> messages = bindingResult.getAllErrors()
