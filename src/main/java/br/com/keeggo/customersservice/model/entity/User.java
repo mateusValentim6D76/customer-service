@@ -19,10 +19,11 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(unique = true)
-	@NotEmpty(message = "{username.field.required}")
+	@Column(nullable = false, unique = true)
+	@NotEmpty(message = "{username.field.required}" )
 	private String username;
 	
+	@Column(nullable = false)
 	@NotEmpty(message = "{password.field.required}")
 	private String password;
 }

@@ -28,8 +28,13 @@ public class UserService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		br.com.keeggo.customersservice.model.entity.User user = repository.findByUsername(username)
-				.orElseThrow(() -> new UsernameNotFoundException("Login not found"));
+				.orElseThrow(() -> new UsernameNotFoundException("Login not exists"));
 
-		return User.builder().username(user.getUsername()).password(user.getPassword()).roles("USER").build();
+		return User
+				.builder()
+				.username(user.getUsername())
+				.password(user.getPassword())
+				.roles("USER")
+				.build();
 	}
 }

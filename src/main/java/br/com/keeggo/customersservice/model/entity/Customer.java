@@ -12,9 +12,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -26,12 +24,10 @@ import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import ch.qos.logback.core.subst.Token.Type;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @Entity
 @Data
@@ -63,7 +59,7 @@ public class Customer {
 	@NotEmpty(message = "{surname.field.required}")
 	private String surname;
 
-	@Column	(nullable = false, length = 11, name = "num_cpf", unique = true)
+	@Column	(length = 11, name = "num_cpf", unique = true)
 	@NotNull(message = "{cpf.field.required}")
 	@CPF(groups = CPFValidator.class, message = "{cpf.field.invalid}")
 	@CNPJ(groups = CNPJValidator.class)

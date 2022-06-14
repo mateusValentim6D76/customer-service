@@ -22,7 +22,7 @@ public class WebConfig {
 		corsConfiguration.setAllowedOriginPatterns(all);
 		corsConfiguration.setAllowedHeaders(all);
 		corsConfiguration.setAllowedMethods(all);
-		corsConfiguration.setAllowCredentials(false);
+		corsConfiguration.setAllowCredentials(true);
 
 		org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		source.registerCorsConfiguration("/**", corsConfiguration);
