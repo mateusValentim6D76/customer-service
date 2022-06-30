@@ -1,5 +1,17 @@
-{"properties": [{
-  "name": "security.jwt.signing-key",
-  "type": "java.lang.String",
-  "description": "A description for 'security.jwt.signing-key'"
-}]}
+{"properties": [
+  {
+    "name": "security.jwt.signing-key",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.signing-key'"
+  },
+  {
+    "name": "spring.jpa.hibernate.naming-strategy",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.hibernate.naming-strategy'"
+  },
+  {
+    "name": "spring.datasource.testWhileIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.testWhileIdle'"
+  }
+]}
